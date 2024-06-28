@@ -1,25 +1,17 @@
-// src/components/AppRouter.js
+// src/AppRouter.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Homepage from '../Homepage';
-import MatchAnalysis from '../MatchAnalysis';
-import PlayerStatistics from '../PlayerStatistics';
-import TeamComparison from '../TeamComparison';
-
+import Homepage from './pages/Homepage';
+import MatchAnalysis from './pages/MatchAnalysis';
+import PlayerStatistics from './pages/PlayerStatistics';
+import TeamComparison from './pages/TeamComparison';
+import NavigationBar from './pages/components/NavigationBar';
 const AppRouter = () => {
   return (
     <Router>
       <div>
         {/* Navigation Bar */}
-        <nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/match-analysis">Match Analysis</Link></li>
-            <li><Link to="/player-statistics">Player Statistics</Link></li>
-            <li><Link to="/team-comparison">Team Comparison</Link></li>
-          </ul>
-        </nav>
-
+         <NavigationBar/>
         {/* Route Definitions */}
         <Routes>
           <Route path="/" element={<Homepage />} />
